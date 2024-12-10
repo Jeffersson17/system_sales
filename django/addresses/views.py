@@ -1,25 +1,25 @@
 from addresses.models import Address, City
 from addresses.serializers import AddressSerializer, CitySerializer
-from rest_framework import viewsets, generics
+from rest_framework import generics, viewsets
 
 
 class AddressViewSet(viewsets.ModelViewSet):
-    queryset = Address.objects.all().order_by('id')
+    queryset = Address.objects.all().order_by("id")
     serializer_class = AddressSerializer
 
 
 class CityViewSet(viewsets.ModelViewSet):
-    queryset = City.objects.all().order_by('id')
+    queryset = City.objects.all().order_by("id")
     serializer_class = CitySerializer
 
 
 class AddressListAPIView(generics.ListAPIView):
-    queryset = Address.objects.all().order_by('id')
+    queryset = Address.objects.all().order_by("id")
     serializer_class = AddressSerializer
 
 
 class CityListAPIView(generics.ListAPIView):
-    queryset = City.objects.all().order_by('id')
+    queryset = City.objects.all().order_by("id")
     serializer_class = CitySerializer
 
 
